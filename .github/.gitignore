@@ -1,0 +1,5 @@
+# Ignore Github files #
+.git
+
+# Ignore Maven files #
+build

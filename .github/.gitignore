@@ -1,5 +1,5 @@
 # Ignore Github files #
 .git
 
-# Ignore Maven files #
+# Ignore project builded files #
 build

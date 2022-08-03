@@ -2,7 +2,7 @@ name: BetterServer
 version: 0.0.1-b
 api-version: 1.19
 author: jeabapLANG
-main: src.com.github.jeabaplang.betterserver.Main
+main: com.github.jeabaplang.betterserver.Main
 commands:
   alert:
     description: Envoie une alerte à tout les joueu(rs/ses)

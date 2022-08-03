@@ -26,7 +26,7 @@
     </dependency>
   </dependencies>
   <build>
-    <directory>../build/</directory>
+    <directory>./build/</directory>
     <sourceDirectory>./src/com/github/jeabaplang/betterserver/</sourceDirectory>
     <resources>
       <resource>

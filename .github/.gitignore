@@ -5,8 +5,8 @@
 build
 
 # Ignore minecraft bundled server files #
-deps/libraries
-deps/logs
-deps/versions
-deps/eula.txt
-deps/server.properties
+deps/*
+!deps/cache
+!deps/setup
+!deps/eula.txt
+!deps/runServer.bat

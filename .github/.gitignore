@@ -3,3 +3,11 @@
 
 # Ignore project builded files #
 build
+
+# Ignore minecraft bundled server files #
+deps/cache
+deps/libraries
+deps/logs
+deps/versions
+deps/eula.txt
+deps/server.properties

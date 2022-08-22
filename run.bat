@@ -23,20 +23,22 @@ GOTO ProjectStart
 
 :CleanProject
 ECHO Cleaning project ...
-call mvn clean -f "e:\Documents\Github\minecraft-plugin_BetterServer\pom.xml"
+//TODO: Changer chemin absolu en relatif
+call mvn clean -f "E:\Github\minecraft-plugin_BetterServer\pom.xml"
 GOTO ProjectStart
 
 :BuildProject
+//TODO: Changer chemin absolu en relatif
 ECHO Building project ...
-call mvn install -f "e:\Documents\Github\minecraft-plugin_BetterServer\pom.xml"
+call mvn install -f "E:\Github\minecraft-plugin_BetterServer\pom.xml"
+IF NOT EXIST "./deps/plugins" MKDIR "./deps/plugins" ELSE DEL /Q /F "./deps/BetterServer-0.0.1-b.jar"
+MOVE /Y "%cd%\build\BetterServer-0.0.1-b.jar" "./deps/plugins/"
 GOTO ProjectStart
 
 :RunProject
 ECHO Running project ...
-IF NOT EXIST "./deps/plugins" mkdir "./deps/plugins"
-MOVE /Y "%cd%\build\BetterServer-0.0.1-b.jar" "./deps/plugins/"
 CD "./deps/"
-call runServer
+CALL runServer
 CD "../"
 GOTO ProjectStart
 

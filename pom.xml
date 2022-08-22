@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.github.jeabaplang.betterserver</groupId>
+  <groupId>com.jeabaplang.betterserver</groupId>
   <artifactId>BetterServer</artifactId>
   <version>0.0.1-b</version>
   <packaging>jar</packaging>
@@ -27,7 +27,7 @@
   </dependencies>
   <build>
     <directory>./build/</directory>
-    <sourceDirectory>./src/com/github/jeabaplang/betterserver/</sourceDirectory>
+    <sourceDirectory>./src/</sourceDirectory>
     <resources>
       <resource>
         <directory>./</directory>

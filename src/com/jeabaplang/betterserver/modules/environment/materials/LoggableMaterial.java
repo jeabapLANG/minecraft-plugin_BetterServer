@@ -1,4 +1,4 @@
-package com.github.jeabaplang.betterserver.modules.environment.materials; //Define the current package
+package com.jeabaplang.betterserver.modules.environment.materials; //Define the current package
 
 public enum LoggableMaterial {
     ACACIA_LOG,

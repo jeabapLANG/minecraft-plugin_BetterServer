@@ -4,6 +4,9 @@ import org.bukkit.Material; //Import Material
 
 import com.jeabaplang.betterserver.modules.environment.materials.HarvestableMaterial; //Import Harvestable
 
+import java.util.EnumMap;
+import java.util.Map;
+
 public final class Plant {
     private final Material _material;
     private final HarvestableMaterial _type;
@@ -75,93 +78,41 @@ public final class Plant {
         return harvestable;
     }
 
+    private static final Map<Material, HarvestableMaterial> harvestables = new EnumMap<>(Map.ofEntries(
+        Map.entry(Material.WHEAT, HarvestableMaterial.WHEAT),
+        Map.entry(Material.BEETROOTS, HarvestableMaterial.BEETROOT),
+        Map.entry(Material.CARROTS, HarvestableMaterial.CARROT),
+        Map.entry(Material.POTATOES, HarvestableMaterial.POTATO),
+        Map.entry(Material.MELON, HarvestableMaterial.MELON),
+        Map.entry(Material.PUMPKIN, HarvestableMaterial.PUMPKIN),
+        Map.entry(Material.BAMBOO, HarvestableMaterial.BAMBOO),
+        Map.entry(Material.SUGAR_CANE, HarvestableMaterial.SUGAR_CANE),
+        Map.entry(Material.SWEET_BERRIES, HarvestableMaterial.SWEET_BERRY_BUSH),
+        Map.entry(Material.CACTUS, HarvestableMaterial.CACTUS),
+        Map.entry(Material.KELP, HarvestableMaterial.KELP),
+        Map.entry(Material.NETHER_WART, HarvestableMaterial.NETHER_WART)
+    ));
+
     public static final HarvestableMaterial getHarvestable(Material material) {
-        HarvestableMaterial harvestable;
-
-        switch(material) {
-            case WHEAT: 
-                harvestable = HarvestableMaterial.WHEAT;
-                break;     
-            case BEETROOTS:
-                harvestable = HarvestableMaterial.BEETROOT;
-                break;     
-            case CARROTS:
-                harvestable = HarvestableMaterial.CARROT;
-                break;     
-            case POTATOES:
-                harvestable = HarvestableMaterial.POTATO;
-                break;     
-            case MELON:
-                harvestable = HarvestableMaterial.MELON;
-                break;     
-            case PUMPKIN:
-                harvestable = HarvestableMaterial.PUMPKIN;
-                break;     
-            case BAMBOO: 
-                harvestable = HarvestableMaterial.BAMBOO;
-                break;     
-            case SUGAR_CANE:
-                harvestable = HarvestableMaterial.SUGAR_CANE;
-                break;     
-            case SWEET_BERRIES:
-                harvestable = HarvestableMaterial.SWEET_BERRY_BUSH;
-                break;     
-            case CACTUS:
-                harvestable = HarvestableMaterial.CACTUS;
-                break;     
-            case KELP:
-                harvestable = HarvestableMaterial.KELP;
-                break;     
-            default:
-                harvestable = HarvestableMaterial.NETHER_WART;
-                break;     
-        }
-
-        return harvestable;
+        return Plant.harvestables.containsKey(material) ? Plant.harvestables.get(material) : HarvestableMaterial.NETHER_WART;
     }
 
+    private static final Map<HarvestableMaterial, Material> seeds = new EnumMap<>(Map.ofEntries(
+        Map.entry(HarvestableMaterial.WHEAT, Material.WHEAT_SEEDS),
+        Map.entry(HarvestableMaterial.BEETROOT, Material.BEETROOT_SEEDS),
+        Map.entry(HarvestableMaterial.CARROT, Material.CARROT),
+        Map.entry(HarvestableMaterial.POTATO, Material.POTATO),
+        Map.entry(HarvestableMaterial.MELON, Material.MELON_SEEDS),
+        Map.entry(HarvestableMaterial.PUMPKIN, Material.PUMPKIN_SEEDS),
+        Map.entry(HarvestableMaterial.BAMBOO, Material.BAMBOO),
+        Map.entry(HarvestableMaterial.SUGAR_CANE, Material.SUGAR_CANE),
+        Map.entry(HarvestableMaterial.SWEET_BERRY_BUSH, Material.SWEET_BERRIES),
+        Map.entry(HarvestableMaterial.CACTUS, Material.CACTUS),
+        Map.entry(HarvestableMaterial.KELP, Material.KELP),
+        Map.entry(HarvestableMaterial.NETHER_WART, Material.NETHER_WART)
+    ));
+
     public static final Material getSeed(HarvestableMaterial harvestable) {
-        Material material;
-
-        switch(harvestable) {
-            case WHEAT: 
-                material = Material.WHEAT_SEEDS;
-                break;     
-            case BEETROOT:
-                material = Material.BEETROOT_SEEDS;
-                break;
-            case CARROT:
-                material = Material.CARROT;
-                break;
-            case POTATO:
-                material = Material.POTATO;
-                break;
-            case MELON:
-                material = Material.MELON_SEEDS;
-                break;
-            case PUMPKIN:
-                material = Material.PUMPKIN_SEEDS;
-                break;
-            case BAMBOO: 
-                material = Material.BAMBOO;
-                break;
-            case SUGAR_CANE:
-                material = Material.SUGAR_CANE;
-                break;
-            case SWEET_BERRY_BUSH:
-                material = Material.SWEET_BERRIES;
-                break;
-            case CACTUS:
-                material = Material.CACTUS;
-                break;
-            case KELP:
-                material = Material.KELP;
-                break;
-            default:
-                material = Material.NETHER_WART;
-                break;
-        }
-
-        return material;
+        return Plant.seeds.containsKey(harvestable) ? Plant.seeds.get(harvestable) : Material.NETHER_WART;
     }
 }
